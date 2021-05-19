@@ -191,6 +191,25 @@ module.exports = {
 ```
 
 布署合约
+在 scripts/ 下创建一个deploy.js文件
+```javascript
+// scripts/deploy.js
+async function main() {
+  // We get the contract to deploy
+  const Box = await ethers.getContractFactory("Box");
+  console.log("Deploying Box...");
+  const box = await Box.deploy();
+  await box.deployed();
+  console.log("Box deployed to:", box.address);
+}
+
+main()
+  .then(() => process.exit(0))
+  .catch(error => {
+    console.error(error);
+    process.exit(1);
+  });
+```
 ```shell
 npx hardhat run --network localhost scripts/deploy.js
 Deploying Box...
