@@ -21,9 +21,20 @@ npx hardhat
 ```
 
 ### 安装openzeppelin的智能合约库
+安装时可指定版本，安装最新版本
 
 ```shell
-npm install @openzeppelin/contracts
+npm install --save-dev @openzeppelin/contracts
+```
+安装指定的版本
+```shell
+npm install --save-dev @openzeppelin/contracts@2.5.0
+```
+
+### 安装openzeppelin测试助手
+```shell
+npm install --save-dev @openzeppelin/test-helpers
+npm install --save-dev @openzeppelin/test-environment mocha chai
 ```
 
 ## 编写智能合约
